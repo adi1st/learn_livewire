@@ -72,6 +72,6 @@ class TodoList extends Component
     {
         return view('livewire.todo-list', [
             'todos' => Todo::latest()->where('name', 'like', "%{$this->search}%")->paginate(5),
-        ]);
+        ])->layout('layouts.todo');
     }
 }
